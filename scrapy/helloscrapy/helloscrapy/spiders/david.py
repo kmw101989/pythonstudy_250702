@@ -7,4 +7,5 @@ class DavidSpider(scrapy.Spider):
     start_urls = ["https://davelee-fun.github.io"]
 
     def parse(self, response):
+    
         pass
