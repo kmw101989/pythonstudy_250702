@@ -1,4 +1,4 @@
-# Scrapy settings for kmwfun_project3 project
+# Scrapy settings for kmwfun_project4 project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "kmwfun_project3"
+BOT_NAME = "kmwfun_project4"
 
-SPIDER_MODULES = ["kmwfun_project3.spiders"]
-NEWSPIDER_MODULE = "kmwfun_project3.spiders"
+SPIDER_MODULES = ["kmwfun_project4.spiders"]
+NEWSPIDER_MODULE = "kmwfun_project4.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = "kmwfun_project3 (+http://www.yourdomain.com)"
+#USER_AGENT = "kmwfun_project4 (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -45,13 +45,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    "kmwfun_project3.middlewares.KmwfunProject3SpiderMiddleware": 543,
+#    "kmwfun_project4.middlewares.KmwfunProject4SpiderMiddleware": 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    "kmwfun_project3.middlewares.KmwfunProject3DownloaderMiddleware": 543,
+#    "kmwfun_project4.middlewares.KmwfunProject4DownloaderMiddleware": 543,
 #}
 
 # Enable or disable extensions
@@ -62,11 +62,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {
-   "kmwfun_project3.pipelines.SetPipeLine": 100,
-   "kmwfun_project3.pipelines.CleanCategoryPipeline": 200,
-   "kmwfun_project3.pipelines.RemovePhrasePipeline": 300,
-}
+#ITEM_PIPELINES = {
+#    "kmwfun_project4.pipelines.KmwfunProject4Pipeline": 300,
+#}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -92,3 +90,5 @@ ITEM_PIPELINES = {
 # Set settings whose default value is deprecated to a future-proof value
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
+
+DUPEFILTER_CLASS = "scrapy.dupefilters.BaseDupeFilter"
