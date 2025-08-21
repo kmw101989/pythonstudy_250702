@@ -4,6 +4,7 @@ START TRANSACTION ;
 
 UPDATE customer 
 SET first_name = "david" ; 
-SELECT * FROM customer limit 10;
+SELECT * FROM customer limit 1;
+
 
 ROLLBACK ;
