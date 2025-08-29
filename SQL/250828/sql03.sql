@@ -125,18 +125,26 @@ FROM film;
 WITH grouped AS(
 	SELECT
 		customer_id id,
-		first_name first_name,
-		last_name last_name,
-		active active,
+	    CONCAT(first_name," ",last_name) As full_name,
+		active ,
 		NTILE(3) OVER (ORDER BY active DESC) as active_group
 		FROM customer
 )
 SELECT 
-	id,first_name,last_name,active,
+	id,full_name,active,
     active_group,
-    ROW_NUMBER() OVER (PARTITION BY active_group ORDER BY id) AS group_row_number
+    ROW_NUMBER() OVER (PARTITION BY active_group ORDER BY id) AS row_numbers
 FROM grouped 
-order by active_group, group_row_number asc;
+order by active_group, row_numbers asc;
+
+
+SELECT 
+	customer_id,
+    first_name,
+    last_name,
+    active,
+    NTILE(3) OVER (ORDER BY active DESC) AS  active_group
+FROM customer;
     
  
 	

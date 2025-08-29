@@ -262,7 +262,7 @@ FROM rental;
 SELECT 
 	I.film_id,
     R.rental_date,
-    FIRST_VALUE(R.rental_date) OVER (PARTITION BY I.film_id ORDER BY R.rental_date) ,
+    FIRST_VALUE(R.rental_date) OVER (PARTITION BY I.film_id ORDER BY R.rental_date),
     last_VALUE(R.rental_date) OVER (PARTITION BY I.film_id ORDER BY R.rental_date) 
 FROM rental R 
 JOIN inventory I USING(inventory_id);
